@@ -3,6 +3,8 @@ package com.olgibaba.supplier.buisness.entities;
 import javax.persistence.*;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
+
 import java.util.Set;
 
 @Entity
@@ -16,20 +18,22 @@ public class Products {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name")
+    @Column(name = "name", length = 45)
+    @Length(max = 45)
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 90)
+    @Length(max = 90)
     private String description;
 
     @Column(name = "weight")
-    private int weight;
+    private double weight;
 
     @Column(name = "stock")
     private int stock;
 
     @Column(name = "price")
-    private int price;
+    private double price;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "category_id")

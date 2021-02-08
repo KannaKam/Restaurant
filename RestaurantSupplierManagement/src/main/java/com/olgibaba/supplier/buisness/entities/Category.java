@@ -4,6 +4,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -19,11 +20,13 @@ public class Category {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "name", unique = true)
+    @Column(name = "name", unique = true, length = 45)
+    @Length(max = 45)
     @NotBlank
     private String name;
 
-    @Column(name = "description")
+    @Column(name = "description", length = 200)
+    @Length(max = 200)
     private String description;
 
     @OneToMany(mappedBy = "category")

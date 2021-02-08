@@ -1,5 +1,6 @@
 package com.olgibaba.supplier.buisness.entities;
 import lombok.*;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
 import javax.validation.constraints.Pattern;
@@ -18,12 +19,15 @@ public class UserRestaurant {
     private int id;
 
     @Column(name = "mail", unique = true)
+    @Length(max = 90)
     private String mail;
 
     @Column(name = "password")
+    @Length(max = 45)
     private String password;
 
     @Column(name = "country")
+    @Length(max = 45)
     private String country;
 
     @Column(name = "postcode")
@@ -31,9 +35,11 @@ public class UserRestaurant {
     private String postcode;
 
     @Column(name = "city")
+    @Length(max = 45)
     private String city;
 
     @Column(name = "address")
+    @Length(max = 200)
     private String address;
 
     @OneToMany(mappedBy = "restaurant")
