@@ -22,13 +22,25 @@ public class UserSignUpRequest {
     @NotBlank
     private String address;
 
-    public UserSignUpRequest(@NotBlank String mail, @NotBlank String password, @NotBlank String country, @NotBlank String postcode, @NotBlank String city, @NotBlank String address) {
+    public UserSignUpRequest(String mail, String password, String country, String postcode, String city, String address) {
         this.mail = mail;
         this.password = password;
         this.country = country;
         this.postcode = postcode;
         this.city = city;
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "UserSignUpRequest{" +
+                "mail='" + mail + '\'' +
+                ", password='" + password + '\'' +
+                ", country='" + country + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", city='" + city + '\'' +
+                ", address='" + address + '\'' +
+                '}';
     }
 
     public String getMail() {

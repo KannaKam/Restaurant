@@ -62,7 +62,7 @@ public class AccountServiceImpl implements AccountService {
             }
         }
 
-        return ResponseEntity.ok(jwToken.generateToken(userRestaurant.getMail()));
+        return ResponseEntity.ok(userRestaurantOptional.get());
 
     }
 
@@ -70,7 +70,7 @@ public class AccountServiceImpl implements AccountService {
     public ResponseEntity<?> signUp(UserSignUpRequest userRestaurant) {
 
         if (userRestaurantRepository.existsByMail(userRestaurant.getMail())){
-            return ResponseEntity.badRequest().body(new ResponseMessages(400, "Error", "Email alredy exists"));
+            return ResponseEntity.badRequest().body(new ResponseMessages(400, "Error", "Email already exists"));
         }
 
         UserRestaurant newUserRestaurant = new UserRestaurant(
@@ -83,7 +83,7 @@ public class AccountServiceImpl implements AccountService {
 
         userRestaurantRepository.save(newUserRestaurant);
 
-        return ResponseEntity.ok(new ResponseMessages(200, "Ok", "Signed up succesfully"));
+        return ResponseEntity.ok(new ResponseMessages(200, "Ok", "Signed up successfully"));
 
     }
 

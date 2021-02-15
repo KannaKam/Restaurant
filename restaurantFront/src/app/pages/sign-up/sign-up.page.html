@@ -1,0 +1,33 @@
+<ion-content>
+
+  <div class="login">
+    <div class="login-triangle"></div>
+
+    <h2 class="login-header">Sign up</h2>
+
+    <form class="login-container" [formGroup]="signUpForm" (ngSubmit)="signUp()">
+      <p>
+        <ion-input type="email" formControlName="mail" placeholder="Email"></ion-input>
+      </p>
+      <p>
+        <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
+      </p>
+      <p>
+        <ion-input type="text" formControlName="country" placeholder="Country"></ion-input>
+      </p>
+      <p>
+        <ion-input type="text" formControlName="postcode" placeholder="Postcode"></ion-input>
+      </p>
+      <p>
+        <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
+      </p>
+      <p>
+        <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
+      </p>
+      <p>
+        <ion-button type="submit" fill="solid" expand="full" color="primary">Sign Up</ion-button>
+      </p>
+    </form>
+  </div>
+
+</ion-content>

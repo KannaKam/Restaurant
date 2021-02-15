@@ -10,7 +10,6 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor @AllArgsConstructor
 @Table(name="restaurant")
 public class UserRestaurant {
 
@@ -48,5 +47,15 @@ public class UserRestaurant {
     private List<Orders> ordersList = new ArrayList<>();
 
     public UserRestaurant(String mail, String password, String country, String postcode, String city, String address) {
+        this.mail = mail;
+        this.password = password;
+        this.country = country;
+        this.postcode = postcode;
+        this.city = city;
+        this.address = address;
+    }
+
+    public UserRestaurant() {
+
     }
 }
