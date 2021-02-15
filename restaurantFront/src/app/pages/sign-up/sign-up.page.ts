@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { UserRestaurant } from 'src/app/interfaces/interfaces';
 import { AccountServiceService } from '../../services/account-service.service';
@@ -12,7 +13,7 @@ import { AccountServiceService } from '../../services/account-service.service';
 export class SignUpPage implements OnInit {
 
   public signUpForm: FormGroup;
-  constructor(private formBuilder: FormBuilder, private accountService:AccountServiceService, public alertController: AlertController) { }
+  constructor(private formBuilder: FormBuilder, private accountService:AccountServiceService, public alertController: AlertController, private router:Router) { }
 
   private userRestaurant: UserRestaurant;
 
@@ -39,7 +40,13 @@ export class SignUpPage implements OnInit {
       cssClass: 'my-custom-class',
       header: 'Success',
       message: 'Signed up succesfully.',
-      buttons: ['OK']
+      buttons: [{
+        text:"Ok",
+        handler:()=>{
+          alert.dismiss();
+          this.router.navigate(['/sign-in']);
+        }
+      }]
     });
 
     await alert.present();
@@ -67,7 +74,7 @@ export class SignUpPage implements OnInit {
   createForm() {
     this.signUpForm = this.formBuilder.group({
       mail: ['', [Validators.required, Validators.email, Validators.maxLength(50)]],
-      password: ['', [Validators.required, Validators.minLength(8),
+      password: ['', [Validators.required, Validators.minLength(4),
       Validators.maxLength(200)]],
       country: ['', [Validators.required, Validators.maxLength(50)]],
       city: ['', [Validators.required, Validators.maxLength(50)]],

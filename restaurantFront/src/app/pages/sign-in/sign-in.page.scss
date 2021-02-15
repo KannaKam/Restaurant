@@ -18,6 +18,15 @@ body {
   margin-bottom: 0;
 }
 
+.signUp{
+  color: #456;
+  text-align: center;
+}
+
+.signUp a:hover{
+  color: rgb(173, 155, 240);
+}
+
 /* The triangle form is achieved by a CSS hack */
 .login-triangle {
   width: 0;

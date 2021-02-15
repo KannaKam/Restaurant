@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { UserRestaurant } from '../interfaces/interfaces';
+import { UserRestaurant, UserLoginRequest } from '../interfaces/interfaces';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +11,9 @@ export class AccountServiceService {
 
   private url = 'http://localhost:8090/restaurant/';
 
-  signIn(signIn: Credential) {
+  signIn(signIn: UserLoginRequest) {
 
-    return this.httpClient.post<any>(this.url + "userSignIn", signIn);
+    return this.httpClient.post<UserRestaurant>(this.url + "userSignIn", signIn);
   }
 
   signUp(signUp: UserRestaurant) { 

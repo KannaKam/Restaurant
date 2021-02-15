@@ -7,3 +7,7 @@ export interface UserRestaurant{
     city:string,
     address:string
 }
+export interface UserLoginRequest{
+    mail:string,
+    password:string
+}
