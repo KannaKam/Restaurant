@@ -1,18 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
-ion-content{
-  background-image: url("../../../assets/fondo.jpg");
-}
-
-body {
-  background: #456;
-  font-family: 'Open Sans', sans-serif;
-}
-
 .login {
-  width: 400px;
-  margin: 16px auto;
-  font-size: 16px;
+  width: 80%;
+  height: 70%;
+  margin-top: 25% !important;
+  margin: auto;
+  font-size: large;
 }
 
 /* Reset top and bottom margins from certain elements */
@@ -42,7 +35,7 @@ body {
 
 .login-header {
   background:  rgb(173, 155, 240);
-  padding: 20px;
+  padding: 5%;
   font-size: 1.4em;
   font-weight: normal;
   text-align: center;
@@ -52,12 +45,12 @@ body {
 
 .login-container {
   background: #ebebeb;
-  padding: 12px;
+  padding: 5%;
 }
 
 /* Every row inside .login-container is defined with p tags */
 .login p {
-  padding: 12px;
+  padding: 5%;
 }
 
 .login ion-input {
@@ -67,7 +60,8 @@ body {
   width: 100%;
   border-width: 2px;
   border-style: solid;
-  padding: 16px;
+  padding: 10%;
+  padding-left: 5% !important;
   outline: 0;
   font-family: inherit;
   font-size: 0.95em;
