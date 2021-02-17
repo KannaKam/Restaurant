@@ -1,9 +1,9 @@
 package com.olgibaba.restaurant.controllers;
 
 import com.olgibaba.restaurant.buisness.services.AccountService;
-import com.olgibaba.restaurant.payload.request.AdminLoginRequest;
-import com.olgibaba.restaurant.payload.request.UserLoginRequest;
-import com.olgibaba.restaurant.payload.request.UserSignUpRequest;
+import com.olgibaba.restaurant.buisness.payload.request.AdminLoginRequest;
+import com.olgibaba.restaurant.buisness.payload.request.UserLoginRequest;
+import com.olgibaba.restaurant.buisness.payload.request.UserSignUpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import javax.validation.Valid;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/restaurant")
+@RequestMapping("/account")
 public class AccountController {
 
     @Autowired

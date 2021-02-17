@@ -1,4 +1,4 @@
-package com.olgibaba.restaurant.payload.request;
+package com.olgibaba.restaurant.buisness.payload.request;
 
 import javax.validation.constraints.NotBlank;
 

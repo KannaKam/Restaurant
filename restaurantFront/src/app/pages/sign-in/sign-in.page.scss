@@ -1,9 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
 
+.bg{
+  margin-top: 0% !important;
+  height: 100%;
+  background-image: url('../../../assets/images/fondo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 .login {
+  position: relative;
   width: 80%;
   height: 70%;
-  margin-top: 25% !important;
+  padding-top: 25%;
   margin: auto;
   font-size: large;
 }
@@ -21,7 +30,7 @@
 }
 
 .signUp a:hover{
-  color: rgb(173, 155, 240);
+  color: rgb(228, 109, 79);
 }
 
 /* The triangle form is achieved by a CSS hack */
@@ -30,11 +39,11 @@
   margin-right: auto;
   margin-left: auto;
   border: 12px solid transparent;
-  border-bottom-color: rgb(173, 155, 240);
+  border-bottom-color: rgb(228, 109, 79);
 }
 
 .login-header {
-  background:  rgb(173, 155, 240);
+  background:  rgb(228, 109, 79);
   padding: 5%;
   font-size: 1.4em;
   font-weight: normal;
@@ -75,28 +84,28 @@
 
 /* Text fields' focus effect */
 .login ion-input:hover{
-  border-color:  rgb(173, 155, 240);
+  border-color:  rgb(228, 109, 79);
 }
 
 .login ion-input[type="submit"] {
-  background:  rgb(173, 155, 240);
+  background:  rgb(228, 109, 79);
   border-color: transparent;
   color: #fff;
   cursor: pointer;
 }
 
 .login ion-input[type="submit"]:hover {
-  background:  rgb(173, 155, 240);
+  background:  rgb(228, 109, 79);
 }
 
 /* Buttons' focus effect */
 .login ion-input[type="submit"]:focus {
-  border-color:  rgb(173, 155, 240);
+  border-color:  rgb(228, 109, 79);
 }
 
 ion-button{
-  background-color:  rgb(173, 155, 240);
+  background-color:  rgb(228, 109, 79);
 }
 ion-button:hover{
-  background-color:  rgb(160, 137, 240);
+  background-color:  rgb(228, 109, 79);
 }

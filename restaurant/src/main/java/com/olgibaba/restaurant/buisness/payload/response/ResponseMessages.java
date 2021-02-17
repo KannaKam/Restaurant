@@ -1,4 +1,4 @@
-package com.olgibaba.restaurant.payload.response;
+package com.olgibaba.restaurant.buisness.payload.response;
 
 public class ResponseMessages {
 

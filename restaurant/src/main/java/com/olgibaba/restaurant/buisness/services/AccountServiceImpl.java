@@ -2,11 +2,11 @@ package com.olgibaba.restaurant.buisness.services;
 
 import com.olgibaba.restaurant.buisness.entities.Admin;
 import com.olgibaba.restaurant.buisness.entities.UserRestaurant;
-import com.olgibaba.restaurant.payload.jsonWebToken.JWToken;
-import com.olgibaba.restaurant.payload.request.AdminLoginRequest;
-import com.olgibaba.restaurant.payload.request.UserLoginRequest;
-import com.olgibaba.restaurant.payload.request.UserSignUpRequest;
-import com.olgibaba.restaurant.payload.response.ResponseMessages;
+import com.olgibaba.restaurant.buisness.payload.jsonWebToken.JWToken;
+import com.olgibaba.restaurant.buisness.payload.request.AdminLoginRequest;
+import com.olgibaba.restaurant.buisness.payload.request.UserLoginRequest;
+import com.olgibaba.restaurant.buisness.payload.request.UserSignUpRequest;
+import com.olgibaba.restaurant.buisness.payload.response.ResponseMessages;
 import com.olgibaba.restaurant.persistence.AdminRepository;
 import com.olgibaba.restaurant.persistence.UserRestaurantRepository;
 import org.springframework.beans.factory.annotation.Autowired;

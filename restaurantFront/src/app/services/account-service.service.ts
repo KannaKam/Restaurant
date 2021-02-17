@@ -9,7 +9,7 @@ export class AccountServiceService {
 
   constructor(private httpClient: HttpClient) { }
 
-  private url = 'http://localhost:8090/restaurant/';
+  private url = 'http://localhost:8090/account/';
 
   signIn(signIn: UserLoginRequest) {
 

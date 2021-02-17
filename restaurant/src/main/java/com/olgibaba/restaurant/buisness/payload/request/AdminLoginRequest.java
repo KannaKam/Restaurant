@@ -1,15 +1,17 @@
-package com.olgibaba.restaurant.payload.request;
+package com.olgibaba.restaurant.buisness.payload.request;
+
 
 import javax.validation.constraints.NotBlank;
 
-public class UserLoginRequest {
+public class AdminLoginRequest {
+
     @NotBlank
     private String mail;
 
     @NotBlank
     private String password;
 
-    public UserLoginRequest(String mail, String password) {
+    public AdminLoginRequest(String mail, String password) {
         this.mail = mail;
         this.password = password;
     }

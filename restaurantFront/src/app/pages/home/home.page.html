@@ -1,9 +1,14 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>home</ion-title>
+    <ion-title>Header</ion-title>
   </ion-toolbar>
 </ion-header>
-
-<ion-content>
-
+<ion-content *ngIf="categories">
+  <ion-list *ngFor="let category of categories">
+    <ion-item>
+      <ion-card (click)="getProducts(category)">
+        <ion-label>{{category.name}}</ion-label>
+      </ion-card>
+    </ion-item>
+  </ion-list>
 </ion-content>

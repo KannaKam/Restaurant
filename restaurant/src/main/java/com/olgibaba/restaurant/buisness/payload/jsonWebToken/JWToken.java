@@ -1,4 +1,4 @@
-package com.olgibaba.restaurant.payload.jsonWebToken;
+package com.olgibaba.restaurant.buisness.payload.jsonWebToken;
 
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
