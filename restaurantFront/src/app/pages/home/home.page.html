@@ -1,14 +1,30 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>Header</ion-title>
+  <ion-toolbar color="none" class="header">
+    <ion-buttons slot="start">
+      <ion-button routerLink="/sign-in">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>Olgibaba</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/cart">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content *ngIf="categories">
   <ion-list *ngFor="let category of categories">
-    <ion-item>
-      <ion-card (click)="getProducts(category)">
-        <ion-label>{{category.name}}</ion-label>
-      </ion-card>
-    </ion-item>
+    <ion-card  (click)="getProducts(category)">
+      <img src="../../../assets/images/supplier.png">
+      <ion-card-header>
+        <ion-card-title>
+          {{category.name}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{category.description}}
+      </ion-card-content>
+    </ion-card>
   </ion-list>
 </ion-content>

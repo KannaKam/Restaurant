@@ -3,7 +3,9 @@ package com.olgibaba.restaurant.buisness.entities;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
@@ -43,6 +45,7 @@ public class Products {
     private Category category;
 
     @OneToMany(mappedBy = "products")
-    @JsonManagedReference(value = "products")
+    @JsonBackReference(value = "products")
+    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
     private Set<OrderedProducts> orderedProducts;
 }

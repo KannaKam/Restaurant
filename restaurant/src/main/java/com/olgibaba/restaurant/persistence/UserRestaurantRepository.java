@@ -12,4 +12,5 @@ public interface UserRestaurantRepository extends JpaRepository<UserRestaurant, 
     boolean existsByMail(String mail);
 
     Optional<UserRestaurant> findUserRestaurantByMail(String mail);
+
 }

@@ -1,5 +1,7 @@
 package com.olgibaba.restaurant.buisness.entities;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import lombok.*;
 import org.hibernate.validator.constraints.Length;
 
@@ -43,7 +45,7 @@ public class UserRestaurant {
     private String address;
 
     @OneToMany(mappedBy = "restaurant")
-    @JsonManagedReference
+    @JsonIdentityInfo(generator= ObjectIdGenerators.PropertyGenerator.class, property="id")
     private List<Orders> ordersList = new ArrayList<>();
 
     public UserRestaurant(String mail, String password, String country, String postcode, String city, String address) {

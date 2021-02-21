@@ -9,21 +9,51 @@
       <p>
         <ion-input type="email" formControlName="mail" placeholder="Email"></ion-input>
       </p>
-      <p>
+        <div *ngFor="let error of validationMessages.mail">
+          <ng-container *ngIf="mail.hasError(error.type) && mail.touched">
+              <small class="errorMessage">{{error.message}}</small>
+          </ng-container>
+        </div>
+        <p>
         <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
       </p>
+        <div *ngFor="let error of validationMessages.password">
+          <ng-container *ngIf="password.hasError(error.type) && password.touched">
+              <small class="errorMessage">{{error.message}}</small>
+          </ng-container>
+      </div>
       <p>
         <ion-input type="text" formControlName="country" placeholder="Country"></ion-input>
       </p>
+      <div *ngFor="let error of validationMessages.country">
+        <ng-container *ngIf="country.hasError(error.type) && country.touched">
+            <small class="errorMessage">{{error.message}}</small>
+        </ng-container>
+    </div>
       <p>
         <ion-input type="text" formControlName="postcode" placeholder="Postcode"></ion-input>
       </p>
+      <div *ngFor="let error of validationMessages.postcode">
+        <ng-container *ngIf="postcode.hasError(error.type) && postcode.touched">
+            <small class="errorMessage">{{error.message}}</small>
+        </ng-container>
+    </div>
       <p>
         <ion-input type="text" formControlName="city" placeholder="City"></ion-input>
       </p>
+      <div *ngFor="let error of validationMessages.city">
+        <ng-container *ngIf="city.hasError(error.type) && city.touched">
+            <small class="errorMessage">{{error.message}}</small>
+        </ng-container>
+    </div>
       <p>
         <ion-input type="text" formControlName="address" placeholder="Address"></ion-input>
       </p>
+      <div *ngFor="let error of validationMessages.address">
+        <ng-container *ngIf="address.hasError(error.type) && address.touched">
+            <small class="errorMessage">{{error.message}}</small>
+        </ng-container>
+    </div>
       <p>
         <ion-button type="submit" fill="solid" expand="full" color="none">Sign Up</ion-button>
       </p>

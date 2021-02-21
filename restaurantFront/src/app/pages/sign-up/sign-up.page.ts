@@ -86,29 +86,29 @@ export class SignUpPage implements OnInit {
   validationMessages = {
     'mail': [
       { type: 'required', message: 'Required' },
-      { type: 'maxlength', message: 'Max length of 50 characters' },
-      { type: 'email', message: 'Valid email' },
+      { type: 'maxlength', message: 'Max length of 90 characters' },
+      { type: 'email', message: 'Not a valid email address' },
     ],
     'password': [
       { type: 'required', message: 'Required' },
-      { type: 'minlength', message: 'Min length of 8 characters' },
-      { type: 'maxlength', message: 'Max length of 40 characters' }
+      { type: 'minlength', message: 'Min length of 4 characters' },
+      { type: 'maxlength', message: 'Max length of 45 characters' }
     ],
     'country': [
       { type: 'required', message: 'Required' },
-      { type: 'maxlength', message: 'Max length of 50 characters' },
+      { type: 'maxlength', message: 'Max length of 45 characters' },
     ],
     'city': [
       { type: 'required', message: 'Required' },
-      { type: 'maxlength', message: 'Max length of 50 characters' },
+      { type: 'maxlength', message: 'Max length of 45 characters' },
     ],
     'address': [
       { type: 'required', message: 'Required' },
-      { type: 'maxlength', message: 'Max length of 50 characters' },
+      { type: 'maxlength', message: 'Max length of 200 characters' },
     ],
     'postcode': [
       { type: 'required', message: 'Required' },
-      { type: 'pattern', message: 'Spanish postalCode (5 numbers)' },
+      { type: 'pattern', message: '5 numbers' },
     ]
   }
 

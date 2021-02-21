@@ -31,18 +31,6 @@ public class UserSignUpRequest {
         this.address = address;
     }
 
-    @Override
-    public String toString() {
-        return "UserSignUpRequest{" +
-                "mail='" + mail + '\'' +
-                ", password='" + password + '\'' +
-                ", country='" + country + '\'' +
-                ", postcode='" + postcode + '\'' +
-                ", city='" + city + '\'' +
-                ", address='" + address + '\'' +
-                '}';
-    }
-
     public String getMail() {
         return mail;
     }

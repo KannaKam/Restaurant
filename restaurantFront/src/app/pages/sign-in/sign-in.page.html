@@ -9,9 +9,19 @@
         <p>
           <ion-input type="email" formControlName="mail" placeholder="Email"></ion-input>
         </p>
+        <div *ngFor="let error of validationMessages.mail">
+          <ng-container *ngIf="mail.hasError(error.type) && mail.touched">
+              <small class="errorMessage">{{error.message}}</small>
+          </ng-container>
+      </div>
         <p>
           <ion-input type="password" formControlName="password" placeholder="Password"></ion-input>
         </p>
+        <div *ngFor="let error of validationMessages.password">
+          <ng-container *ngIf="password.hasError(error.type) && password.touched">
+              <small class="errorMessage">{{error.message}}</small>
+          </ng-container>
+      </div>
         <p>
           <ion-button type="submit" fill="solid" expand="full" color="none">Sign In</ion-button>
         </p>

@@ -29,3 +29,33 @@ export interface Category{
     description:string,
     productsList?:Products[]
 }
+
+export interface CartItem{
+    product:Products,
+    quantity:number
+}
+
+export interface Cart{
+    items?:CartItem[]
+}
+
+export interface ProductRequest{
+    name:string,
+    quantity:number
+}
+
+export interface CartItemRequest{
+    id:number,
+    quantity:number
+}
+
+export interface CartRequest{
+    id?:number,
+    itemsRequest?:CartItemRequest[]
+}
+
+export interface ResponseMessage{
+    status:number,
+    header:string,
+    message:string
+}

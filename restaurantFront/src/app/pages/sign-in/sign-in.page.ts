@@ -4,7 +4,8 @@ import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { AccountServiceService } from 'src/app/services/account-service.service';
-import { UserLoginRequest, UserRestaurant } from '../../interfaces/interfaces';
+import { Cart, UserLoginRequest, UserRestaurant } from '../../interfaces/interfaces';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-sign-in',
@@ -15,13 +16,17 @@ export class SignInPage implements OnInit {
 
   public signInForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private accountService:AccountServiceService, public alertController: AlertController, private storage:Storage, private router:Router) { }
+  constructor(private formBuilder: FormBuilder, private accountService:AccountServiceService, public alertController: AlertController, private storage:Storage, private router:Router, private cartService:CartService) { }
 
   private userRestaurant: UserLoginRequest;
   private user:UserRestaurant;
+  private cart:Cart = {
+    items:[]
+  };
 
   ngOnInit() {
     this.createForm();
+    this.storage.clear();
   }
 
   signIn(){
@@ -33,6 +38,7 @@ export class SignInPage implements OnInit {
         if(data){
           this.user=data;
           this.storage.set('userRestaurant', this.user);
+          this.cartService.setCart(this.cart);
           this.presentAlertSuccess();
         }
       }, error => {
@@ -86,13 +92,13 @@ export class SignInPage implements OnInit {
   validationMessages = {
     'mail': [
       { type: 'required', message: 'Required' },
-      { type: 'maxlength', message: 'Max length of 50 characters' },
-      { type: 'email', message: 'Valid email' },
+      { type: 'maxlength', message: 'Max length of 200 characters' },
+      { type: 'email', message: 'Not a valid email address' },
     ],
     'password': [
       { type: 'required', message: 'Required' },
-      { type: 'minlength', message: 'Min length of 8 characters' },
-      { type: 'maxlength', message: 'Max length of 40 characters' }
+      { type: 'minlength', message: 'Min length of 4 characters' },
+      { type: 'maxlength', message: 'Max length of 45 characters' }
     ]
   }
 

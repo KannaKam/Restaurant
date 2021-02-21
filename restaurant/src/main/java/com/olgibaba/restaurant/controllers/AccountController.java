@@ -1,7 +1,6 @@
 package com.olgibaba.restaurant.controllers;
 
 import com.olgibaba.restaurant.buisness.services.AccountService;
-import com.olgibaba.restaurant.buisness.payload.request.AdminLoginRequest;
 import com.olgibaba.restaurant.buisness.payload.request.UserLoginRequest;
 import com.olgibaba.restaurant.buisness.payload.request.UserSignUpRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,13 +16,6 @@ public class AccountController {
 
     @Autowired
     AccountService accountService;
-
-    @PostMapping("/adminSignIn")
-    public ResponseEntity<?> signIn (@Valid @RequestBody AdminLoginRequest adminLoginRequest){
-
-        return this.accountService.signIn(adminLoginRequest);
-
-    }
 
     @PostMapping("/userSignIn")
     public ResponseEntity<?> signIn (@RequestBody UserLoginRequest userLoginRequest){

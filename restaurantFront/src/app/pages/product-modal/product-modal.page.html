@@ -1,9 +1,42 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>productModal</ion-title>
+  <ion-toolbar  color="none" class="header">
+    <ion-title>{{category.name}}</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="exit()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <ion-list *ngFor="let product of category.productsList">
+    <ion-card>
+      <img src="../../../assets/images/supplier.png">
+      <ion-card-header>
+        <ion-card-subtitle>
+          {{category.name}}
+        </ion-card-subtitle>
+        <ion-card-title>
+          {{product.name}}
+        </ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        {{product.description}}
+        <ion-label slot="end">{{product.price}}€/u</ion-label>
+      <ion-buttons slot="end">
+        <ion-button (click)="sustractQuantity(product)">
+          <ion-icon slot="start" name="remove-outline"></ion-icon>
+        </ion-button>
+        <ion-label>{{product.quantity}}</ion-label>
+        <ion-button (click)="addQuantity(product)">
+          <ion-icon slot="start" name="add-outline"></ion-icon>
+        </ion-button>
+        <ion-button (click)="addToCart(product, product.quantity)">
+           <ion-icon slot="start" name="cart"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
