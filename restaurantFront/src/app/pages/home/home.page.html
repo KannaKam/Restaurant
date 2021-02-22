@@ -16,7 +16,6 @@
 <ion-content *ngIf="categories">
   <ion-list *ngFor="let category of categories">
     <ion-card  (click)="getProducts(category)">
-      <img src="../../../assets/images/supplier.png">
       <ion-card-header>
         <ion-card-title>
           {{category.name}}

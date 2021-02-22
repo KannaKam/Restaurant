@@ -9,7 +9,7 @@ export class UserRestaurantService {
 
   constructor(private httpClient:HttpClient) { }
 
-  private url = "http://localhost:8085/restaurant/";
+  private url = "http://localhost:8095/restaurant/";
 
   getCategories(){
     return this.httpClient.get<any>(this.url + "getCategories");

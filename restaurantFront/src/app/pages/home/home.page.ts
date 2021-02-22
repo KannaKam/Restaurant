@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Category, UserRestaurant } from 'src/app/interfaces/interfaces';
@@ -11,7 +11,7 @@ import { ProductModalPage } from '../product-modal/product-modal.page';
   templateUrl: './home.page.html',
   styleUrls: ['./home.page.scss'],
 })
-export class HomePage implements OnInit {
+export class HomePage{
 
   constructor(private storage:Storage, private userRestaurantService:UserRestaurantService, private modalController:ModalController) { }
 
@@ -19,7 +19,7 @@ export class HomePage implements OnInit {
   public categories: Category [] = [];
   public products: Products[] = [];
 
-  ngOnInit() {
+  ionViewWillEnter(){
     this.loadRestaurant();
     this.getCategories();
   }

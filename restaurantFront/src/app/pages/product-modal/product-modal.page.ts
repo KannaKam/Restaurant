@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ModalController, AlertController } from '@ionic/angular';
-import { Storage } from '@ionic/storage';
 import { Cart, Category, Products } from '../../interfaces/interfaces';
 import { CartService } from '../../services/cart.service';
 import { Router } from '@angular/router';

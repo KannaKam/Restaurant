@@ -71,7 +71,7 @@ public class UserRestaurantController {
                 orderedProducts.setUnits(cartRequest.getItemsRequest()[i].getQuantity());
                 orderedProductsRepository.save(orderedProducts);
                 productsList.get(i).setStock(productsList.get(i).getStock()-cartRequest.getItemsRequest()[i].getQuantity());
-
+                productsRepository.save(productsList.get(i));
             }else {
                 return ResponseEntity.badRequest().body(new ResponseMessages(409,"Error","Insufficient stock"));
             }

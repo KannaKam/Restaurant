@@ -14,17 +14,17 @@
     <ion-card>
       <img src="../../../assets/images/supplier.png">
       <ion-card-header>
-        <ion-card-subtitle>
-          {{category.name}}
-        </ion-card-subtitle>
         <ion-card-title>
           {{product.name}}
         </ion-card-title>
       </ion-card-header>
       <ion-card-content>
         {{product.description}}
+        <br>
         <ion-label slot="end">{{product.price}}€/u</ion-label>
-      <ion-buttons slot="end">
+        <br>
+        <ion-label *ngIf="product.stock>0" slot="end">{{product.stock}} unidades disponibles</ion-label>
+      <ion-buttons slot="end" *ngIf="product.stock>0">
         <ion-button (click)="sustractQuantity(product)">
           <ion-icon slot="start" name="remove-outline"></ion-icon>
         </ion-button>
@@ -33,9 +33,10 @@
           <ion-icon slot="start" name="add-outline"></ion-icon>
         </ion-button>
         <ion-button (click)="addToCart(product, product.quantity)">
-           <ion-icon slot="start" name="cart"></ion-icon>
+           <ion-icon slot="end" name="cart"></ion-icon>
         </ion-button>
       </ion-buttons>
+      <ion-label *ngIf="product.stock==0" class="error">Out of stock.</ion-label>
       </ion-card-content>
     </ion-card>
   </ion-list>
