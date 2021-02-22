@@ -34,15 +34,19 @@ export class ProductModalPage implements OnInit {
         })
       }
       if (flag == false) {
-        this.cart.items.push({
-          product,
-          quantity
-        })
-        this.presentAlertSuccess();
-        this.cartService.setCart(this.cart);
-        this.resetQuantity();
-      } else {
-        this.presentAlertFailed("Product alredy listed to cart.");
+        if (quantity!=0){
+          this.cart.items.push({
+            product,
+            quantity
+          })
+          this.presentAlertSuccess();
+          this.cartService.setCart(this.cart);
+          this.resetQuantity();
+        }else if(quantity==0){
+          this.presentAlertFailed("Can not add 0 products to cart.");
+      } 
+      }else{
+        this.presentAlertFailed("Product alredy listed in cart.");
       }
     });
   }
