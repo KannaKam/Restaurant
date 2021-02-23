@@ -1,0 +1,7 @@
+com.olgibaba.restaurant
+com.olgibaba.restaurant.buisness.entities
+com.olgibaba.restaurant.buisness.payload.request
+com.olgibaba.restaurant.buisness.payload.response
+com.olgibaba.restaurant.buisness.services
+com.olgibaba.restaurant.controllers
+com.olgibaba.restaurant.persistence

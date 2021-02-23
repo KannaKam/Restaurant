@@ -18,6 +18,11 @@ public class AccountServiceImpl implements AccountService {
     @Autowired
     UserRestaurantRepository userRestaurantRepository;
 
+    /**
+     * Method that compares the user coming from the app and the DB.
+     * @param userRestaurant
+     * @return A ResponseEntity with either the error status, header and message if the credentials are wrong, or an user.
+     */
     @Override
     public ResponseEntity<?> signIn(UserLoginRequest userRestaurant) {
 
@@ -37,6 +42,11 @@ public class AccountServiceImpl implements AccountService {
 
     }
 
+    /**
+     * Method that compares the user coming from the app and the DB.
+     * @param userRestaurant
+     * @return A ResponseEntity with either the error status, header and message if the user already exists, or an user.
+     */
     @Override
     public ResponseEntity<?> signUp(UserSignUpRequest userRestaurant) {
 

@@ -24,6 +24,10 @@ public class UserRestaurantServiceImpl implements UserRestaurantService{
     @Autowired
     UserRestaurantRepository userRestaurantRepository;
 
+    /**
+     * Method that finds all categories in the DB.
+     * @return a list of Category items
+     */
     @Override
     public List<Category> categoriesList() {
         return categoryRepository.findAll();

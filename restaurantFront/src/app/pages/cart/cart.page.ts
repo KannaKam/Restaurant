@@ -42,7 +42,6 @@ export class CartPage implements OnInit {
     const resp = await this.storage.get('userRestaurant');
     if (resp) {
       this.userRestaurant = resp;
-      console.log(this.userRestaurant);
     }
   }
 

@@ -22,7 +22,10 @@ export class SignUpPage implements OnInit {
   }
 
   signUp(){
-    if(this.signUpForm.invalid) return
+    if(this.signUpForm.invalid){
+      return this.presentAlertFail("Wrong credentials.");
+      
+    }
     this.userRestaurant = this.signUpForm.value;
 
     this.accountService.signUp(this.userRestaurant).subscribe(
@@ -30,6 +33,8 @@ export class SignUpPage implements OnInit {
         if(data){
           this.presentAlert();
         }
+      }, error=>{
+        this.presentAlertFail(error.error.message);
       }
     ) 
 
@@ -45,6 +50,22 @@ export class SignUpPage implements OnInit {
         handler:()=>{
           alert.dismiss();
           this.router.navigate(['/sign-in']);
+        }
+      }]
+    });
+
+    await alert.present();
+  }
+
+  async presentAlertFail(message:string) {
+    const alert = await this.alertController.create({
+      cssClass: 'my-custom-class',
+      header: 'Fail',
+      message: message,
+      buttons: [{
+        text:"Ok",
+        handler:()=>{
+          alert.dismiss();
         }
       }]
     });

@@ -17,6 +17,11 @@ public class AccountController {
     @Autowired
     AccountService accountService;
 
+    /**
+     * Method that signs in the user coming from the app
+     * @param userLoginRequest
+     * @return the user that has logged.
+     */
     @PostMapping("/userSignIn")
     public ResponseEntity<?> signIn (@RequestBody UserLoginRequest userLoginRequest){
 
@@ -24,6 +29,11 @@ public class AccountController {
 
     }
 
+    /**
+     * Method that signs up the user coming from the app
+     * @param userSignUpRequest
+     * @return the user that has signed up.
+     */
     @PostMapping("/userSignUp")
     public ResponseEntity<?> signUp (@RequestBody UserSignUpRequest userSignUpRequest){
 

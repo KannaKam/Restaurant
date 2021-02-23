@@ -35,12 +35,26 @@ public class UserRestaurantController {
     @Autowired
     OrdersRepository ordersRepository;
 
+    /**
+     * Method that finds the category list of the db
+     * @return the list of Category items.
+     */
     @GetMapping("getCategories")
     public ResponseEntity<?> getCategories (){
         List<Category> categories = userRestaurantService.categoriesList();
         return new ResponseEntity(categories, HttpStatus.OK);
     }
 
+    /**
+     * Method that receives a cartRequest item.
+     * The method creates a new order, and a restaurant which will be found using the cartRequest user ID.
+     * The order is filled with the user that has made the order, the date it has been made, and the not-sent number (which is 0)
+     * Creates a product list that is filled with the cartRequest items and sorts it.
+     * Checks if the amount of items is equal or lesser than the actual stock. If so, the method saves the ProductList, Orders, and OrderedProduct items in
+     * their respective DB table.
+     * @param cartRequest
+     * @return A ResponseEntity with either the error status, header and message if the credentials are wrong, or an ok status.
+     */
     @PostMapping("/buy")
     public ResponseEntity<?> buy(@RequestBody CartRequest cartRequest){
 

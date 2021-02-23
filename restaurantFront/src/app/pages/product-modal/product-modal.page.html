@@ -6,6 +6,11 @@
         <ion-icon name="arrow-back-outline"></ion-icon>
       </ion-button>
     </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToCart()">
+        <ion-icon name="cart"></ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -23,7 +28,7 @@
         <br>
         <ion-label slot="end">{{product.price}}€/u</ion-label>
         <br>
-        <ion-label *ngIf="product.stock>0" slot="end">{{product.stock}} unidades disponibles</ion-label>
+        <ion-label *ngIf="product.stock>0" slot="end">{{product.stock}} available units.</ion-label>
       <ion-buttons slot="end" *ngIf="product.stock>0">
         <ion-button (click)="sustractQuantity(product)">
           <ion-icon slot="start" name="remove-outline"></ion-icon>

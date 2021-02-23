@@ -113,4 +113,9 @@ export class ProductModalPage implements OnInit {
     }
   }
 
+  async goToCart(){
+    await this.modalController.dismiss();
+    this.router.navigate(['/cart']);
+  }
+
 }
